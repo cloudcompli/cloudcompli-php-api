@@ -1,0 +1,19 @@
+{
+    "name": "cloudcompli\/cloudcompli-php-api",
+    "description": "PHP API for cloudcompli.com",
+    "keywords": ["cloudcompli"],
+    "version": "2.0.0-dev",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "CloudCompli\\WebApiClient\\V2\\": "src/"
+        }
+    },
+    "require": {
+        "league/oauth2-client": "1.0.2"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "stable"
+}
