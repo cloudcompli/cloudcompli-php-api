@@ -11,7 +11,7 @@ Set up the URL to a cloudcompli.com instance in `example/shared/config.php`.
 If you'd like to test form submission and photo upload, you additionally need to open `example/basic.php` and change `INCLUDE_FORM_SUBMISSION` to `true`:
 
 ```
-define('INCLUDE_FORM_SUBMISSION', false);
+define('INCLUDE_FORM_SUBMISSION', true);
 ```
 
 #### Database
