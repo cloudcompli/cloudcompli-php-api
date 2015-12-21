@@ -34,7 +34,8 @@ if (!isset($_GET['code'])) {
 
         // Try to get an access token using the authorization code grant.
         $accessToken = $provider->getAccessToken('authorization_code', [
-            'code' => $_GET['code']
+            'code' => $_GET['code'],
+            'verify' => false
         ]);
         
         $session = new OAuth2Session($provider, $accessToken);
@@ -81,6 +82,22 @@ if (!isset($_GET['code'])) {
             'title' => 'Get Form Pre-population Data for Project',
             'request' => $session->rawGetRequest('projects/'.$project['id'].'/forms/'.$form['name'].'/prepopulate-data'),
             'response' => $session->get('projects/'.$project['id'].'/forms/'.$form['name'].'/prepopulate-data')
+        ]);
+        
+        $session->post('projects/'.$project['id'].'/forms/'.$form['name'].'/prepopulate-data', [
+            'test_field' => 'aaaa'
+        ]);
+        
+        
+        
+        echo new View('request-response', [
+            'title' => 'Post Form Data for Project',
+            'request' => $session->rawPostRequest('projects/'.$project['id'].'/forms/'.$form['name'], [
+                'test_field' => 'aaa'
+            ]),
+            'response' => $session->post('projects/'.$project['id'].'/forms/'.$form['name'], [
+                'test_field' => 'aaa'
+            ])
         ]);
 
     } catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
