@@ -8,6 +8,12 @@ This is a sample application that demonstrates how to authenticate against cloud
 
 Set up the URL to a cloudcompli.com instance in `example/shared/config.php`.
 
+If you'd like to test form submission and photo upload, you additionally need to open `example/basic.php` and change `INCLUDE_FORM_SUBMISSION` to `true`:
+
+```
+define('INCLUDE_FORM_SUBMISSION', false);
+```
+
 #### Database
 
 Go to the cloudcompli.com instance you're connecting to and add two documents to its database.
