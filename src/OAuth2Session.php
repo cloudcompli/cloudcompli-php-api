@@ -83,7 +83,7 @@ class OAuth2Session
         $request = $this->getRequest($path);
         
         $lines = [
-            'GET '.parse_url($url, PHP_URL_PATH).(parse_url($url, PHP_URL_QUERY) ? ('?'.parse_url($url, PHP_URL_QUERY)) : '').' HTTP/'.$request->getProtocolVersion()
+            'POST '.parse_url($url, PHP_URL_PATH).(parse_url($url, PHP_URL_QUERY) ? ('?'.parse_url($url, PHP_URL_QUERY)) : '').' HTTP/'.$request->getProtocolVersion()
         ];
         
         foreach($request->getHeaders() as $headerName => $headerValues)
